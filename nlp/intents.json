@@ -1,0 +1,71 @@
+{
+  "intents": [
+    {
+      "tag": "get-breed-info",
+      "patterns": [
+        "Tell me about the breed",
+        "Information about the breed",
+        "How is the breed"
+      ]
+    },
+    {
+      "tag": "get-all-breed-names",
+      "patterns": [
+        "List all breed names",
+        "Give all breeds",
+        "list breeds",
+        "get all the breeds",
+        "What all different breeds dog available ?"
+      ]
+    },
+    {
+      "tag": "get-all-country-names",
+      "patterns": [
+        "List all country names",
+        "Give countries",
+        "Get all the countries",
+        "What different countries"
+      ]
+    },
+    {
+      "tag": "get-all-owner-emails",
+      "patterns": [
+        "List all owner emails",
+        "Give all the emails",
+        "List emails",
+        "emails"
+      ]
+    },
+    {
+      "tag": "get-owner-by-email",
+      "patterns": [
+        "Can you find owner name with email",
+        "get owner details by email",
+        "Find owner by email",
+        "Who is owner with email",
+        "Which owner has email"
+      ]
+    },
+    {
+      "tag": "get-available-count-in",
+      "patterns": [
+        "How many dogs available for adoption in",
+        "What is the available dogs count for adoption in"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Hey",
+        "Good morning",
+        "Good Evening",
+        "What can you do",
+        "Can you help me",
+        "What commands are available"
+      ]
+    }
+  ]
+}

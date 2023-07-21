@@ -1,0 +1,4 @@
+
+sudo nohup python3 app.py> log.txt 2>&1 &
+sudo lsof -n -i :5000
+sudo kill -9
