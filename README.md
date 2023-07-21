@@ -65,81 +65,96 @@ The characteristics users want in a pet can be checked and researched based on t
 Figure 1 : ERD Diagram
 
 
-Breed: As seen in the schema, we have a ‘Breed’ table, which has ‘breed_id’ as the primary key to identify each breed of dog uniquely.
-Characteristic: This table has ‘characteristic_id’ assigned to identify each character pet has uniquely. A breed can have multiple of these characteristics mapped in this table. So, we have used ‘breed_id’ as a foreign key in this table, uniquely identifying breed in table “breed.”
-Survey: This table uses ‘survey_id’ to uniquely identify the surveys performed and is the primary key of this table. Surveys are related to how a dog is rated on some scale based on a particular characteristic of any breed. In this table, we also have ‘characteristic_id,’ a foreign key. So multiple survey_id is mapped to a specific characteristic_id of a species.
-Gallery: This table has ‘gallery_id’ as the primary key to uniquely map multiple image URLs to a breed. Hence, ‘breed_id’ is a foreign key for this table, referring to the ‘breed’ table.
-Vital_stat: This table stores unique signs of vitals using ‘vital_stat_id’; hence it is the primary key for this table. It uses ‘breed_id’ as a foreign key to refer to the ‘breed table.’
-Owner: This table uses ‘owner_id’ to uniquely identify each owner’s entry in the table; the adoption table will use this column to establish a relation.
-Dog: This table ‘dog_id’ uniquely identifies each dog (not breed) available for adoption. In addition, it uses ‘breed_id ‘ as a foreign key to retrieve the breed of the dog.
-Adoption: This table uses ‘adoption_id’ to uniquely store each adoption entry. Hence, it is the primary key for the table. The table uses ‘dog_id’ and ‘owner_id’ as foreign keys to refer to necessary details from the ‘dog’ and ‘owner’ tables.
-Country: This table uses ‘country_id’ to uniquely store a set of countries available. This acts as a primary key for this table and maps to address the table acting as a foreign key.
-Address: This table uses ‘address_id’ to uniquely store addresses, thus acting as the primary key for this table. It also employs ‘country_id’ from the ‘Country’ table as a foreign key to establish the relationship between the two relations.
-V. ATTRIBUTES DESCRIPTION
+- Breed: As seen in the schema, we have a ‘Breed’ table, which has ‘breed_id’ as the primary key to identify each breed of dog uniquely.
+- Characteristic: This table has ‘characteristic_id’ assigned to identify each character pet has uniquely. A breed can have multiple of these characteristics mapped in this table. So, we have used ‘breed_id’ as a foreign key in this table, uniquely identifying breed in table “breed.”
+- Survey: This table uses ‘survey_id’ to uniquely identify the surveys performed and is the primary key of this table. Surveys are related to how a dog is rated on some scale based on a particular characteristic of any breed. In this table, we also have ‘characteristic_id,’ a foreign key. So multiple survey_id is mapped to a specific characteristic_id of a species.
+- Gallery: This table has ‘gallery_id’ as the primary key to uniquely map multiple image URLs to a breed. Hence, ‘breed_id’ is a foreign key for this table, referring to the ‘breed’ table.
+- Vital_stat: This table stores unique signs of vitals using ‘vital_stat_id’; hence it is the primary key for this table. It uses ‘breed_id’ as a foreign key to refer to the ‘breed table.’
+- Owner: This table uses ‘owner_id’ to uniquely identify each owner’s entry in the table; the adoption table will use this column to establish a relation.
+- Dog: This table ‘dog_id’ uniquely identifies each dog (not breed) available for adoption. In addition, it uses ‘breed_id ‘ as a foreign key to retrieve the breed of the dog.
+- Adoption: This table uses ‘adoption_id’ to uniquely store each adoption entry. Hence, it is the primary key for the table. The table uses ‘dog_id’ and ‘owner_id’ as foreign keys to refer to necessary details from the ‘dog’ and ‘owner’ tables.
+- Country: This table uses ‘country_id’ to uniquely store a set of countries available. This acts as a primary key for this table and maps to address the table acting as a foreign key.
+- Address: This table uses ‘address_id’ to uniquely store addresses, thus acting as the primary key for this table. It also employs ‘country_id’ from the ‘Country’ table as a foreign key to establish the relationship between the two relations.
+  
+# V. ATTRIBUTES DESCRIPTION
 Notes:
-➢ We have added the data type and the maximum length of
+- We have added the data type and the maximum length of
 the string in square braces; e.g., Varchar[50] means a
 maximum of 50 characters.
-➢ We have added the foreign tag key (FK) after the attribute
-name to indicate it. All the FK follows the DELETE
-CASCADE policy.
-➢ We have added the tag NOT NULL(NN) after the
-attributes if it cannot be null.
-Breed:
+
+- We have added the foreign tag key (FK) after the attribute
+name to indicate it. All the FK follows the DELETE CASCADE policy.
+- We have added the tag NOT NULL(NN) after the attributes if it cannot be null.
+
+``` Breed:
 Breed_Id (Varchar[50], NN): Stores the uniquely assigned Id to each breed of pet. Hence this attribute is fit to be the primary key.
 Name (Varchar[50], NN): Stores the name of the Breed.
 Description (Varchar[2048], NN): Stores the details related to the breed in terms of an overview of what is unique about the breed and any trivia related to that breed.
-Profile_url (Varchar[256], NN): Stores the URL of the website from where one can get more details related to that dog breed.
-Characteristic:
+Profile_url (Varchar[256], NN): Stores the URL of the website from where one can get more details related to that dog breed. `
+```
+``` Characteristic:
 Characteristic_id(Integer, NN): Stores the assigned unique id of a dog that has been mapped to some characteristic. This being unique makes it suitable for the primary key.
 Breed_id(Varchar[50], NN): This is the primary key in the Breed table, which is referred to here to establish a relationship between those two tables. Hence, it’s a foreign key in this table.
-Title(Varchar[256], NN): This stores the few-word textual representation of the various characters of the dog.
-Survey:
+Title(Varchar[256], NN): This stores the few-word textual representation of the various characters of the dog. `
+```
+``` Survey:
 Survey_id(Integer, NN) integer, not null default nextval: Stores the assigned unique id of surveys mapped to surveys done regarding the nature of dogs. This being unique makes it suitable for the primary key.
 Characteristic_id(Integer, NN) integer not null: Stores the assigned unique id of a dog that has been mapped to some characteristic. This primary key in the characteristic table is used as a foreign key to reference the characteristic table.
 Title(Varchar[256], NN): Stores the textual description of characteristic_id using a few words to give a good idea of the pet’s behavior.
-Rating(Integer, NN): Stores the rating(1-5) in terms of how much a particular characteristic of a pet has based on the surveys done on that pet category.
-Gallery:
+Rating(Integer, NN): Stores the rating(1-5) in terms of how much a particular characteristic of a pet has based on the surveys done on that pet category. `
+```
+``` Gallery:
 Gallery_id(Integer, NN): Stores the id to map the gallery corresponding to each dog’s images uniquely. Acts as the primary key in this table.
 
 Breed_id(Varchar[50], NN): Stores the uniquely assigned Id to each dog breed. As this attribute is the primary key in the breed table, so hence being referenced here as a foreign key to establish a relation between the two tables.
 
-Image_url(Varchar[256], NN): Stores the sample image URL of each pet present in the table, which can be used to view by the user.
-
+Image_url(Varchar[256], NN): Stores the sample image URL of each pet present in the table, which can be used to view by the user. ```
+```
+```
 Vital_stats:
 Vital_stats_id(Integer, NN): Stores the ids to a unique set of Vitals used to characterize a breed. A breed can have multiple groups of vital_status_id associated with it. As it is unique, hence can be treated as the primary key for this table.
 Breed_id(Varchar[50], NN): Stores the uniquely assigned Id to each dog breed. As this attribute is the primary key in the breed table, so hence being referenced here as a foreign key to establish the relation between the two tables.
 Title(Varchar[50], NN): Stores the textual one-worded description assigned to the vital status of a breed. These can be their weight, height, average age, etc.
 Stat(Varchar[256], NN): Stores values for each vital stat such as the value of their weight, height, average age, etc.
+```
+```
 Owner:
 Owner_id(Integer, NN): Stores the unique id assigned to each owner to be populated in this table. This is the primary key for this table.
 Full_name(Varchar[256], NN): Stores the owner’s full name.
 Email_id(Varchar[256], NN): Stores the email ids of the owners
 Mobile(Varchar[15], NN): Stores the mobile numbers of the owners.
 AddressId(Integer, NN): Stores the ids of the address of the owners present in the owner table.
+```
+```
 Dog:
-
 Dog_id(Integer, NN): Stores id assigned to each dog (not breed) which is required to put an identification to the dog available for adoption.
 Breed_id(Varchar[50], NN): Stores the uniquely assigned Id to each dog breed. As this attribute is the primary key in the breed table, so hence being referenced here as a foreign key to establish a relation between the two tables.
 Name(Varchar[256], NN): Stores the dog’s name available for adoption.
 Is_adopted(Boolean, NN): Stores the status of whether a dog is available for adoption using true or false values.
 Address_Id(Integer, NN): Stores the ids of the address of the owners present in the owner table to achieve the normalized form of the table.
+```
+```
 Country:
-
 CountryId (Integer, NN): Stores the IDs of the countries present in the address table to establish the mapping and helps us normalize the table.
 Name (Varchar[50], NN): Stores the countries’ names in the address table.
+```
+```
 Adoption:
 Adoption_id(Integer, NN): Stores id assigned to each adoption which took the place of a dog (not breed) required to put an identification to dog adoption. It acts as the primary key in this table.
 Owner_id(Integer, NN): Stores the unique id assigned to each owner to be populated in this table. This is the primary key in the owner table, referenced here as a foreign key.
 Dog_id(Integer, NN): Stores id assigned to each dog (not breed) which is required to put an identification to the dog available for adoption.
 Adoption_date(Date, NN): Stores the dates on which the adoption was made in date format.
-Address:
+```
+``` Address:
 Address_Id(Integer, NN): Stores the IDs of the addresses provided as part of the owner relation. It was created as part of normalization to keep the change of address hassle separate.
 Address(Varchar[ 256 ], NN): Stores the address itself as part of the mapping to the address_id.
 City(Varchar[50], NN): Stores the owner’s city provided as part of their address.
 Country_id(Integer, NN): Stores the corresponding IDs of the owner’s country provided as part of their address.
-Zip_code(Varchar[10], NN): Stores the owner’s zip provided as part of their address.
-VI. FDs AND BCNF OF TABLE
+Zip_code(Varchar[10], NN): Stores the owner’s zip provided as part of their address. 
+
+```
+# VI. FDs AND BCNF OF TABLE
+
 Table 1 : Functional dependencies
 Table Name Functional Dependencies
 Breed breed_id→name, description, profile_url
