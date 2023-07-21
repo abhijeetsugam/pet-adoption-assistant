@@ -59,7 +59,12 @@ The characteristics users want in a pet can be checked and researched based on t
 
 # IV. SCHEMA DESCRIPTION
 
+![image](https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/c0b37763-0dbc-4145-9c7a-f5075d1b5503)
+
+
 Figure 1 : ERD Diagram
+
+
 Breed: As seen in the schema, we have a ‘Breed’ table, which has ‘breed_id’ as the primary key to identify each breed of dog uniquely.
 Characteristic: This table has ‘characteristic_id’ assigned to identify each character pet has uniquely. A breed can have multiple of these characteristics mapped in this table. So, we have used ‘breed_id’ as a foreign key in this table, uniquely identifying breed in table “breed.”
 Survey: This table uses ‘survey_id’ to uniquely identify the surveys performed and is the primary key of this table. Surveys are related to how a dog is rated on some scale based on a particular characteristic of any breed. In this table, we also have ‘characteristic_id,’ a foreign key. So multiple survey_id is mapped to a specific characteristic_id of a species.
