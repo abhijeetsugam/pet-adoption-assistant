@@ -47,15 +47,17 @@ Our goal is to make the adoption process hassle-free.
 
 - Database Admin:
   - The platform's owner built the platform's infrastructure so users can access it. They will keep the database updated and ensure everyone can use the system.
-  Some real-life use cases where it eases down hassles:
+ 
+  
+  ### Some real-life use cases where it eases down hassles:
   - Pet adoption centers that manually manage their adoption process can use our system to make it quick and easy.
 
 
-It can be used to perform much research to come up with decisions to make a final adoption.
-Reduces the burden of running from one pet shelter to another in search of a specific breed and set of traits for the person looking for adoption.
-A person looking to adopt a particular breed of a pet can check on pictures present in the gallery to know better.
-Users can check the availability and unavailability of the dog in the pet shelter.
-The characteristics users want in a pet can be checked and researched based on their needs, such as adaptability, friendliness, trainability, etc.
+- It can be used to perform much research to come up with decisions to make a final adoption.
+- Reduces the burden of running from one pet shelter to another in search of a specific breed and set of traits for the person looking for adoption.
+- A person looking to adopt a particular breed of a pet can check on pictures present in the gallery to know better.
+- Users can check the availability and unavailability of the dog in the pet shelter.
+- The characteristics users want in a pet can be checked and researched based on their needs, such as adaptability, friendliness, trainability, etc.
 
 # IV. SCHEMA DESCRIPTION
 
@@ -77,14 +79,10 @@ Figure 1 : ERD Diagram
 - Address: This table uses ‘address_id’ to uniquely store addresses, thus acting as the primary key for this table. It also employs ‘country_id’ from the ‘Country’ table as a foreign key to establish the relationship between the two relations.
   
 # V. ATTRIBUTES DESCRIPTION
-Notes:
-- We have added the data type and the maximum length of
-the string in square braces; e.g., Varchar[50] means a
-maximum of 50 characters.
 
-- We have added the foreign tag key (FK) after the attribute
-name to indicate it. All the FK follows the DELETE CASCADE policy.
-- We have added the tag NOT NULL(NN) after the attributes if it cannot be null.
+<img width="287" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/5266c9af-c0f0-45bd-aa89-59126be4e21a">
+
+
 
 ``` Breed:
 Breed_Id (Varchar[50], NN): Stores the uniquely assigned Id to each breed of pet. Hence this attribute is fit to be the primary key.
@@ -155,46 +153,27 @@ Zip_code(Varchar[10], NN): Stores the owner’s zip provided as part of their ad
 ```
 # VI. FDs AND BCNF OF TABLE
 
-Table 1 : Functional dependencies
-Table Name Functional Dependencies
-Breed breed_id→name, description, profile_url
-profile_url→breed_id, name, description
-Characteristic characteristic_id→breed_id, title
-Gallery gallery_id →breed_id, image_url
-Vital_Stat vital_stats_id →breed_id, title, stat
-Survey survey_id→characteristic_id, title, rating
-Dog dog_id→breed_id,name,is_adopted,address_id
-Address address_id→address,city,country_id, zip_code
-Country country_id →name
-Owner owner_id→full_name,email_id,mobile,address_id
-email_id→full_name,owner_id,mobile,address_id
-Adoption adoption_id →owner_id, dog_id, adoption_date
-Table 2 : BCNF Proof
-Table name Candidate Keys Prime attributes
-breed breed_id, profile_url breed_id, profile_url
-characteristic characteristic_id characteristic_id
-gallery gallery_id gallery_id
-vital_stats vital_stats_id vital_stats_id
-survey survey_ id survey_ id
-dog dog_id dog_id
-address address_id address_id
-country country_id country_id
-owner owner_id, email_id owner_id, email_id
-adoption adoption_id adoption_id
+<img width="439" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/7f6a7720-b7f2-4971-8bbe-994d17a4dbd1">
+
+
 From the above-given table, one can see that the FDs in each
 relation adhere to two given conditions to be consistent with
 the BCNF form:
 They are non-trivial
 The attributes on the left side of FDs are super keys.
-VII. SCHEMA ENHANCEMENT
+
+# VII. SCHEMA ENHANCEMENT
 We have decomposed the address details from the owner table and reused it to store the address of the dog listed for adoption., also we have added a new table country to keep the country by its ID to save memory.
 We have added the attributes ‘is_adopted’ in the adoption table to keep track of the adoption status of the dog to avoid joining with the adoption table to minimize query execution time.
 We have identified the standard length of the string in all the tables and revised accordingly. For example, for the name attribute, we changed the size from Varchar (256) to Varchar (50).
-VIII. BASIC QUERIES
-Figure 2 : Basic queries
-IX. ADVANCED QUERIES
-Figure 3 : Advanced queries
-X. QUERY ANALYSIS AND OPTIMIZATIONS
+
+# VIII. BASIC QUERIES
+
+<img width="417" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/d8bf6093-5471-4e96-80bc-dd3849bbba07">
+<img width="408" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/9afa91cb-9106-4768-ba81-72f7e3a0ab1a">
+<img width="436" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/9793b958-2f98-4feb-8f26-16376be71c99">
+
+# X. QUERY ANALYSIS AND OPTIMIZATIONS
 
 We have employed two of the following query optimization
 techniques:
