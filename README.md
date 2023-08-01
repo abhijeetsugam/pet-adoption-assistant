@@ -153,7 +153,8 @@ Zip_code(Varchar[10], NN): Stores the owner’s zip provided as part of their ad
 ```
 # VI. FDs AND BCNF OF TABLE
 
-<img width="439" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/7f6a7720-b7f2-4971-8bbe-994d17a4dbd1">
+![image](https://github.com/abhijeetsugam/pet-adoption-assistant/assets/121594655/fb965664-518e-4c65-a8d9-04cd45c0374f)
+
 
 
 From the above-given table, one can see that the FDs in each
@@ -169,12 +170,12 @@ We have identified the standard length of the string in all the tables and revis
 
 # VIII. BASIC QUERIES
 
-<img width="417" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/d8bf6093-5471-4e96-80bc-dd3849bbba07">
-<img width="408" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/9afa91cb-9106-4768-ba81-72f7e3a0ab1a">
-<img width="436" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/9793b958-2f98-4feb-8f26-16376be71c99">
 
-- 1. Add new dog for adoption listing
-- 2. 
+1. Add new dog for adoption listing
+2. Add new address
+3. Update mobile number of a owner given email id.
+4. update adoption status of all the dogs in the dog table
+5. Delete all the dog names containing jack and not adopted
   
 
 
