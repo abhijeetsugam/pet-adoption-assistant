@@ -173,6 +173,10 @@ We have identified the standard length of the string in all the tables and revis
 <img width="408" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/9afa91cb-9106-4768-ba81-72f7e3a0ab1a">
 <img width="436" alt="image" src="https://github.com/abhijeetsugam11/pet-adoption-assistant/assets/121594655/9793b958-2f98-4feb-8f26-16376be71c99">
 
+- 1. Add new dog for adoption listing
+- 2. 
+  
+
 
 # IX.ADVANCED QUERIES
 
