@@ -165,21 +165,27 @@ The attributes on the left side of FDs are super keys.
 
 # VII. SCHEMA ENHANCEMENT
 We have decomposed the address details from the owner table and reused it to store the address of the dog listed for adoption., also we have added a new table country to keep the country by its ID to save memory.
-We have added the attributes ‘is_adopted’ in the adoption table to keep track of the adoption status of the dog to avoid joining with the adoption table to minimize query execution time.
-We have identified the standard length of the string in all the tables and revised accordingly. For example, for the name attribute, we changed the size from Varchar (256) to Varchar (50).
+We have added the attribute ‘is_adopted’ in the adoption table to keep track of the adoption status of the dog to avoid joining with the adoption table to minimize query execution time.
+We have identified the standard length of the string in all the tables and revised it accordingly. For example, for the name attribute, we changed the size from Varchar (256) to Varchar (50).
 
 # VIII. BASIC QUERIES
 
 
 1. Add new dog for adoption listing
-2. Add new address
-3. Update mobile number of a owner given email id.
-4. update adoption status of all the dogs in the dog table
-5. Delete all the dog names containing jack and not adopted
+2. Add a new address
+3. Update the mobile number of the owner's given email id.
+4. update the adoption status of all the dogs on the dog table
+5. Delete all the dog names containing Jack and not adopted
   
 
 
 # IX.ADVANCED QUERIES
 
+1. SELECT DOGS Count by breed that is AVAILABLE FOR ADOPTION.
+2. Select names of dog breeds that are not kids friendly
+3. Select dog breeds that are neither easy to train nor easy to groom
+4. Select all the owners from India and list their adopted dog_name, breed_name, and adoption date and order by adoption date.
+5. Rank the country names by their adoption rate
+6. Delete all adoption records that are older than 10 years.
 
 # X. QUERY ANALYSIS AND OPTIMIZATIONS
