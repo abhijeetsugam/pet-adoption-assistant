@@ -1,7 +1,7 @@
 # I. PROBLEM STATEMENT
 
 The problem statement tries to build data models for pet
-adoption platforms. It is challenging for pet adoption centers
+adoption platforms.. It is challenging for pet adoption centers
 to maintain track of the pets available for adoption, their
 breed’s features, and vital stats.
 Choosing a breed or type of pet when someone plans to adopt
