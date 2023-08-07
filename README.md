@@ -189,3 +189,15 @@ We have identified the standard length of the string in all the tables and revis
 6. Delete all adoption records that are older than 10 years.
 
 # X. QUERY ANALYSIS AND OPTIMIZATIONS
+
+
+
+
+
+
+#References: 
+ 
+•	Dogtime.com 
+•	Geekforgeek
+•	University Database. 
+
